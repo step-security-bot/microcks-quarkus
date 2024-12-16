@@ -17,6 +17,11 @@ jobs:
     runs-on: ubuntu-latest
     environment: Build
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@v2
+        with:
+          egress-policy: audit
+
       - name: Checkout Code
         uses: actions/checkout@v4
 
